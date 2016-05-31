@@ -13,9 +13,30 @@
 <script src="js/acciones.js"></script>
 <script src="phonegap.js" type="text/javascript"></script>
 <script type="text/javascript">
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
 </script>
 </head>
-<body>
+<body onLoad="MM_preloadImages('imagenes/carita2.jpg')">
 
 <div data-role="page" id="Principal" data-theme="a">
 <div data-role="header" data-add-back-btn="true" data-back-btn-text="Regresar" 	   data-back-btn-theme="a">
@@ -50,7 +71,7 @@
 <h1>Mas sobre Atlixco:</h1>
 <div>
 <p><strong>Ubicación:</strong></p>
-<center><img src="imagenes/ubicacion.png" style="border-style: double; border-width:8px; border-color:#000"></center>
+<center><img src="imagenes/ubicacion.jpg" style="border-style: double; border-width:8px; border-color:#000"></center>
 <p><strong>Consultar hoteles sercanos</strong> <a href="http://www.trivago.com.mx/?iSemThemeId=48304&iPathId=51440&sem_keyword=%2Bhotel%20%2Batlixco&sem_creativeid=86108465222&sem_matchtype=b&sem_network=g&sem_device=c&sem_placement=&sem_target=&sem_adposition=1t2&sem_param1=&sem_param2=&sem_campaignid=230208662&sem_adgroupid=17536915982&sem_targetid=kwd-21914833955&sem_location=1010139&cip=5212001023" target="_self"> Aquí </a></p>
 <p><strong>Pueblo magico</strong></p>
 Atlixco.- Atlixco es un Pueblo Mágico que aglutina una gran riqueza cultural, tradiciones, monumentos históricos y donde se pueden admirar paisajes únicos del Volcán Popocatépetl, por lo que es un destino turístico muy visitado.
@@ -69,8 +90,8 @@ Atlixco.- Atlixco es un Pueblo Mágico que aglutina una gran riqueza cultural, t
 <center><strong>
 Rodolfo Cruz Solís
 <br>Programación 
-<br> 4 "g"
-<br> Desarrolla aplicaciones moviles</strong></center>
+<br> 4 "g" <a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image29','','imagenes/carita2.jpg',1)"><img src="imagenes/carita1.jpg" align="right" width="50" height="50" id="Image29"></a> <br> Desarrolla aplicaciones moviles</strong></center>
+</div>
 </div>
 </div>
 <br>
@@ -224,7 +245,7 @@ El platillo por excelencia en fiestas coloniales que muestra la creatividad de l
 
  <div data-role="page" id="Pagina3" data-add-back-btn="true" data-theme="a">
  <div data-role="header" data-add-back-btn="true" data-back-btn-text="Regresar" data-back-btn-theme="a">
- <h1>Festejos</h1>
+ <h1>Celebraciones</h1>
  </div>
  <div data-role="content">
  <div>
